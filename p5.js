@@ -1,24 +1,22 @@
+//Q5.
+var unit = 300;
+var unit = window.prompt("Enter Electricity Units");
+var bill = 0;
+var additional = unit > 250;
+if (unit > 50) {
+  bill += 25;
+} else bill += unit * 0.5;
+unit -= 50;
 
+if (unit > 100) {
+  bill += 75;
+} else if (unit > 0) bill += unit * 0.75;
+unit -= 100;
 
-units = 300
-bill = 0
-if(units<=50){
-  bill  = units*0.5
-}
-else if(units <=150){
-  bill = 50*0.5 + (units-50)*0.75
-}
-else if(units <= 250){
-  bill = 50*0.5 + 100*0.75 + (units-150)*1.2
-}
-else if((units > 250 ) && (  bill <= 300 )){
-  bill = 50*0.5 + 100*0.75 + 150*1.2 + (units-250) * 1.5
-}
-
-
-
-if((bill>=250) && (bill <= 300)){
-  bill = bill + bill * 0.2
-}
-
-console.log(bill)
+if (unit > 100) {
+  bill += 120;
+} else if (unit > 0) bill += unit * 1.2;
+unit -= 100;
+if (unit > 0) bill += unit * 1.5;
+if (additional) bill += bill * 0.2;
+console.log(bill);
